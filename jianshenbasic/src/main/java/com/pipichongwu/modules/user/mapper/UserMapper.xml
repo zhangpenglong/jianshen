@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pipichongwu.modules.user.dao.UserMapper">
+    <select id="selectById" parameterType="java.lang.Integer"  resultType="com.pipichongwu.modules.user.model.User" >
+        select *
+        from da_jianshen_baseuser  where id=#{id}
+
+    </select>
+    <select id="selectByOpenId" parameterType="java.lang.String"  resultType="com.pipichongwu.modules.user.model.User" >
+        select *
+        from da_jianshen_baseuser  where openId=#{openId}
+    </select>
+    <insert id="insert" parameterType="com.pipichongwu.modules.user.model.User" useGeneratedKeys="true" keyProperty="id">
+        <selectKey keyProperty='id' resultType='int' order='AFTER'  >
+            select LAST_INSERT_ID();
+        </selectKey>
+
+        INSERT  INTO da_jianshen_baseuser
+           VALUES (id,#{userName},#{wxNickName},#{gender},#{country},#{province},#{city},#{avatarUrl},#{headUrl},#{userRole},#{phoneNum},#{openId},
+        #{sessionKey},#{willWeight},#{weight},#{height},#{birthday},#{backup1},#{backup2},#{backup3},#{isValid},#{create_date},#{update_date})
+    </insert>
+    <update id="updateUser" parameterType="com.pipichongwu.modules.user.model.User">
+        UPDATE da_jianshen_baseuser <set>
+        <if test="userName != null">
+            userName=#{userName},
+        </if>
+        <if test="wxNickName != null">
+            wxNickName=#{wxNickName},
+        </if>
+        <if test="gender != null">
+            gender=#{gender},
+        </if>
+        <if test="country != null">
+            country=#{country},
+        </if>
+        <if test="province != null">
+            province=#{province},
+        </if>
+        <if test="city != null">
+            city=#{city},
+        </if>
+        <if test="avatarUrl != null">
+            avatarUrl=#{avatarUrl},
+        </if>
+        <if test="headUrl != null">
+            headUrl=#{headUrl},
+        </if>
+        <if test="userRole != null">
+            userRole=#{userRole},
+        </if>
+        <if test="phoneNum != null">
+            phoneNum=#{phoneNum},
+        </if>
+        <if test="openId != null">
+            openId=#{openId},
+        </if>
+        <if test="sessionKey != null">
+            sessionKey=#{sessionKey},
+        </if>
+        <if test="willWeight != null">
+            willWeight=#{willWeight},
+        </if>
+
+        <if test="weight != null">
+            weight=#{weight},
+        </if>
+        <if test="height != null">
+            height=#{height},
+        </if>
+        <if test="birthday != null">
+            birthday=#{birthday},
+        </if>
+        <if test="backup1 != null">
+            backup1=#{backup1},
+        </if>
+        <if test="backup2 != null">
+            backup2=#{backup2},
+        </if>
+        <if test="backup3 != null">
+            backup3=#{backup3},
+        </if>
+        <if test="isValid != null">
+            isValid=#{isValid},
+        </if>
+        <if test="create_date != null">
+            create_date=#{create_date},
+        </if>
+        <if test="update_date != null">
+            update_date=#{update_date},
+        </if>
+    </set>
+        WHERE id=#{id}
+    </update>
+</mapper>

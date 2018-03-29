@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jianshenapi:war">
+    <output-path>$PROJECT_DIR$/jianshenapi/target</output-path>
+    <root id="archive" name="jianshenapi.war">
+      <element id="artifact" artifact-name="jianshenapi:war exploded" />
+    </root>
+  </artifact>
+</component>

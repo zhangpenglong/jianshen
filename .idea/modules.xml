@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jianshen.iml" filepath="$PROJECT_DIR$/jianshen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jianshenapi/jianshenapi.iml" filepath="$PROJECT_DIR$/jianshenapi/jianshenapi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jianshenbasic/jianshenbasic.iml" filepath="$PROJECT_DIR$/jianshenbasic/jianshenbasic.iml" />
+    </modules>
+  </component>
+</project>
